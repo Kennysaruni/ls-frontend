@@ -1,0 +1,27 @@
+.form-container {
+    text-align: center;
+    margin: auto;
+    padding: auto;
+  }
+  
+  .legend {
+    color: black;
+    width: 700px;
+
+  }
+  legend::-moz-focus-inner{
+    color: rgb(130, 26, 186);
+    width: 710px;
+  }
+  
+  .input-block {
+    display: block;
+    margin: 10px auto; /* Center the input blocks */
+    width: 92%;
+  }
+  
+  .submit {
+    display: block;
+    margin: 20px auto; /* Center the submit button */
+  }
+  
