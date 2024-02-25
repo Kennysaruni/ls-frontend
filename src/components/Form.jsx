@@ -6,6 +6,7 @@ function Form() {
     const [slug, setSlug] = useState('')
     const [shortenedLink, setShortenedLink] = useState('')
     const [links, setLinks] = useState([])
+    const [key, setKey] = useState(false)
 
     // Here we call useEffect, a React hook used mostly for fetching data, we use this to see the links
     useEffect(e => {
@@ -49,33 +50,48 @@ function Form() {
         .then(data => setShortenedLink(data.short_link));
     }
 
+    function handleKeyChange(){
+      setKey(!key)
+      console.log(key)
+    }
+
 // In React JS we work with html elements as well as they are rendered on the client
 // Below is a form used to collect the data, i.e the url and its slug 
 
   return (
     <div className='form-container'>
-    <h1 className='title'> Swift </h1>
+    <h1 className='title'> Shortify your link</h1>
     <form onSubmit={handleSubmit}>
-      <fieldset className='legend'>
-        <legend>Shorten your link with a click !!</legend>
         <input
           className='input-block'
           type='text'
-          placeholder='URL'
+          placeholder='Paste a link to shorten'
           value={url}
           //On any change in the input field, the url will be set to the value in the input 
           onChange={(event) => setUrl(event.target.value)}
         />
-        <input
-          className='input-block'
-          type='text'
-          placeholder='Slug'
-          value={slug}
-          //On any change in the input field, the url will be set to the value in the input 
-          onChange={(event) => setSlug(event.target.value)}
-        />
+        <div className="radio-control">
+          <div className='key-control'>
+            <span>Shorten without a key</span>
+             <input type='radio'   name='radio' checked={!key} className='inline' onChange={() => setKey(false)} />
+          </div>
+          <div className='key-control'>
+            <span>Shorten with a custom code</span>
+              <input type='radio' name='radio' className='inline' checked={key} onChange={() => setKey(true)}/>
+          </div>
+        </div>
+        {key && (
+           <input
+           className='input-block'
+           type='text'
+           placeholder='Enter your custom code'
+           value={slug}
+           onChange={(event) => setSlug(event.target.value)}
+         />
+        )}
         <button className='submit' type='submit'>Shorten</button>
-      </fieldset>
+        <p>By using linked, You agree to our Terms of Service and Privacy Policy.</p>
+        <p>We use cookies for analytics, personalization and ads</p>
     </form>
     {/* After succesful link shortening, the shortened link will be displayed below the form */}
     {/* The link is clickable and will redirect the user to the original link */}

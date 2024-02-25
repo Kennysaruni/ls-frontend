@@ -1,27 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+:root {
+  --form-control-color: #121417 ;
+}
+*,*:before,*:after {
+  box-sizing: border-box;
+}
+
 .form-container {
     text-align: center;
-    margin: auto;
+    margin: 0 auto;
     padding: auto;
-  }
-  
-  .legend {
-    color: black;
-    width: 700px;
+    width: 512px;
+    height: 695px;
+    background-color: rgb(255, 255, 255);
+    font-family: Inter;
 
-  }
-  legend::-moz-focus-inner{
-    color: rgb(130, 26, 186);
-    width: 710px;
   }
   
   .input-block {
     display: block;
     margin: 10px auto; /* Center the input blocks */
-    width: 92%;
+    width: 452px;
+    height: 50px;
+    border-radius: 5px;
+    border: 0.5px solid grey;
+    padding-left: 20px;
+    background-color: white;
   }
-  
+
+  .key-control{
+    display: flex;
+    margin: 0 auto;
+    background-color: white;
+    color: #121417;
+    width: 452px;
+    height: 50px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 0.5px solid grey;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .key-control span{
+    margin-right: 150px;
+    font-family: Inter;
+    font-size: 13.5px;
+    margin-left: 17px;
+    font-weight: 500;
+  }
+
+  .key-control input[type='radio']{
+    background-color: black;
+    border: 2px solid black;
+    width: 50px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  .key-control input[type='radio']:checked{
+    background-color: black;
+  }
+  .inline {
+    width: unset;
+    margin: 0 0.5em 0 0;
+    vertical-align: middle;
+  }
+
+  .radio-control{
+    padding-top: 20px;
+  }
+
   .submit {
     display: block;
-    margin: 20px auto; /* Center the submit button */
+    width: 452px;
+    height: 2.5em;
+    margin: 2.5em auto 1em auto;
+    border-radius: 5px;
+    border: none;
+    background-color: #1A80E5;
+    min-width: 300px;
+    color: white;
+    font-weight: 600;
+    font-family: Inter;
+    
+  }
+
+  p{
+    color: grey;
+    font-family: Inter;
+    font-size: 12px;
   }
   
+  h1{
+    font-weight: bold;
+    font-size: 2em;
+    color: #121417;
+    padding-top: 75px;
+  }
