@@ -22,7 +22,7 @@
     margin: 10px auto; /* Center the input blocks */
     width: 452px;
     height: 50px;
-    border-radius: 5px;
+    border-radius: 10px;
     border: 0.5px solid grey;
     padding-left: 20px;
     background-color: white;
@@ -35,20 +35,43 @@
     color: #121417;
     width: 452px;
     height: 50px;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-bottom: 10px;
     border: 0.5px solid grey;
     align-items: center;
     justify-content: space-between;
   }
 
-  .key-control span{
-    margin-right: 150px;
+  .key-control span,.key-control a{
     font-family: Inter;
     font-size: 13.5px;
     margin-left: 17px;
+    margin-right: 10px;
     font-weight: 500;
   }
+
+  .key-control button{
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  .key-control button img{
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .key-control a{
+    color:#1A80E5;
+  }
+
+  .key-control:focus{
+    color: #12508f;
+  }
+
 
   .key-control input[type='radio']{
     background-color: black;
@@ -76,13 +99,14 @@
     width: 452px;
     height: 2.5em;
     margin: 2.5em auto 1em auto;
-    border-radius: 5px;
+    border-radius: 10px;
     border: none;
     background-color: #1A80E5;
     min-width: 300px;
     color: white;
     font-weight: 600;
     font-family: Inter;
+    cursor: pointer;
     
   }
 
