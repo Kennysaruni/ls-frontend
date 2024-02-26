@@ -103,7 +103,7 @@ function Form() {
       </div>
     )}
         <p>By using Shortify, You agree to our Terms of Service and Privacy Policy.</p>
-        <p>We use cookie for analytics, personalization and ads</p>
+        <p>We use cookies for analytics, personalization and ads</p>
     </form>
     {/* After succesful link shortening, the shortened link will be displayed below the form */}
     {/* The link is clickable and will redirect the user to the original link */}
