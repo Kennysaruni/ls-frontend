@@ -102,7 +102,7 @@ function Form() {
         </CopyToClipboard>
       </div>
     )}
-        <p>By using Shortify, You agree to our Terms of Service and Privacy Policy.</p>
+        <p>By using Short.ly, You agree to our Terms of Service and Privacy Policy.</p>
         <p>We use cookies for analytics, personalization and ads</p>
     </form>
     {/* After succesful link shortening, the shortened link will be displayed below the form */}
