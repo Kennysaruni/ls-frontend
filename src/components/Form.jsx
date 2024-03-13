@@ -52,7 +52,14 @@ function Form() {
         })
         // Here we devour  the pizza (data) , we use the setter function created above to set the data variable
         // to the data got from the API after a succesful POST  API request
-        .then(data => setShortenedLink(data.short_link));
+        .then(data => {
+          if(data && data.short_link){
+            setShortenedLink(data.short_link)
+          }
+          else{
+            console.error('Short link unavailable, please check link list')
+          }
+        });
     
     }
 // In React JS we work with html elements as well as they are rendered on the client
