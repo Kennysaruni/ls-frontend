@@ -1,0 +1,14 @@
+/* Notfound.css */
+.notfound-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    height: 65vh; /* Set height to viewport height */
+  }
+  
+  .notfound {
+    font-size: 2rem; /* Adjust font size as needed */
+  }
+  
+  
