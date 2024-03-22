@@ -2,6 +2,24 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Link Shortener
+This project was designed to help shorten long links and make them more easily accesible for sharing and other purposes.
+
+# Setup
+In order to be able to run this project you willl first need to be in it's directory, yoy can do that with the following command
+
+```bash
+cd ls-frontend
+```
+This project uses Node v 17 and React JS for the UI/UX, you will need to install the dependencies.
+```bash
+npm install
+```
+Finally for the client side rendering you will need to start the react application, you can do that by running the following command
+```bash
+npm start
+```
+
 ## Available Scripts
 
 In the project directory, you can run:

@@ -21,7 +21,7 @@ function Form() {
         // Devour the pizza (data)
         .then(data => setLinks(data.links))
     },[])
-    // Just a debugging measure to ensure that the links data has actually been sent from the backend
+    // Just a debugging measure to ensure that the links have actually been sent from the backend
     console.log(links)
 
     //We need a handleSubmit function to handle the submit event after a user clicks on the submit button
@@ -105,7 +105,7 @@ function Form() {
          <span>Shortened link: </span>   
         <a href={`${API_BASE_URL}${shortenedLink}`}>{`${API_BASE_URL}${shortenedLink}`}</a>
         <CopyToClipboard text={`${API_BASE_URL}${shortenedLink}`} onCopy={() => setCopied(true)}>
-          <button>{copied ? <img src={tick} alt='Copied!' /> : <img src={copy} alt='Copy to Clipoard' />}</button>
+          <button>{copied ? <img src={tick} alt='Copied!'  /> : <img src={copy} alt='Copy to Clipoard'   />}</button>
         </CopyToClipboard>
       </div>
     )}

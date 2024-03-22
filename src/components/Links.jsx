@@ -6,6 +6,13 @@ function Links() {
     const [data,setData] = useState([])
     const items = 5
     const [next,setNext] = useState(items)
+    const [search,setSearch] = useState("")
+
+    const filtered = data.filter(link => {
+      return search.toLowerCase() === "" ? link :link.url.toLowerCase().includes(search)
+    })
+
+    console.log(filtered)
 
     useEffect(() => {
         fetch(`${API_BASE_URL}/s`)
@@ -23,7 +30,7 @@ function Links() {
             Your Links
         </h1>
         <label htmlFor="filter"> Filter links
-            <input type="text" placeholder='Search for links' id='filter' className='input-block' />
+            <input type="text" placeholder='Search for links by original link' id='filter' className='input-block' onChange={e => setSearch(e.target.value)} />
         </label>
         <div className="table">
             <table>
@@ -37,7 +44,7 @@ function Links() {
                     </tr>
                 </thead>
                 <tbody>
-                    {data.slice(0,next).map((link) => (
+                    {filtered.slice(0,next).map((link) => (
                         (
                             <tr key={link.id}>
                                 <td>{`${API_BASE_URL}/${link.slug}`}</td>

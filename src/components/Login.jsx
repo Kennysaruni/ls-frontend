@@ -1,25 +1,48 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Login.css'
 import API_BASE_URL from '../utilities/env'
 
 function Login() {
     const [username,setUsername] = useState('')
     const [password,setPassword] = useState('')
+    const [user,setUser] = useState([])
     const [details,setDetails] = useState([])
 
-    function handleLogin(){
+    function handleLogin(e){
+        e.preventDefault()
+
         fetch(`${API_BASE_URL}/login`,{
             method: 'POST',
             headers :{
-                'Content-Type':'application/json'
+                'Content-Type':'application/json',
+                Accept: 'application/json'
             },
             body: JSON.stringify({username,password})
         })
         .then(res => res.json())
-        .then(data => setDetails(data))
+        .then(data => {
+            console.log(data)
+            localStorage.setItem('jwt',data.jwt)
+            setUser(data.user)
+        })
+        .catch(error => console.error('Error',error))
     }
 
-    console.log(details)
+    useEffect(() => {
+        const token = localStorage.getItem('jwt')
+        fetch(`${API_BASE_URL}/profile`,{
+            method: 'GET',
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            setDetails(data)
+        } )
+    },[])
+  
   return (
     <div className='form-container'>
         <h1>Welcome {details.username}</h1>
